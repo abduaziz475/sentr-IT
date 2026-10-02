@@ -4,10 +4,27 @@ import { DataContext } from './dataContext'
 
 const STORAGE_KEY = 'novatech-workspace-v1'
 const SESSION_KEY = 'novatech-session-v1'
+const previousDefaultEmails = {
+  admin: 'abduazizabumanonov6Gmail.com',
+  director: 'abduazizabdumanonov7',
+}
+
 function loadData() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY))
-    return saved ? { ...seedData, ...saved } : seedData
+    if (!saved) return seedData
+
+    const credentials = Object.fromEntries(Object.entries(seedData.credentials).map(([role, account]) => [
+      role,
+      { ...account, ...saved.credentials?.[role] },
+    ]))
+    for (const [role, previousEmail] of Object.entries(previousDefaultEmails)) {
+      if (credentials[role].email.toLowerCase() === previousEmail.toLowerCase()) {
+        credentials[role].email = seedData.credentials[role].email
+      }
+    }
+
+    return { ...seedData, ...saved, credentials }
   } catch {
     return seedData
   }

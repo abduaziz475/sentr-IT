@@ -29,8 +29,8 @@ npm run build
 
 | Role | Email / account ID | Access code |
 | --- | --- | --- |
-| User Admin | `abduazizabumanonov6Gmail.com` | `123456789` |
-| Director | `abduazizabdumanonov7` | `987654321` |
+| User Admin | `abduazizabdumanonov6gmail.com` | `123456789` |
+| Director | `abduazizabdumanonov7@gmail.com` | `987654321` |
 
 Both accounts can change their email and access code from **Settings → Security**. The Director can also manage or reset the User Admin account.
 

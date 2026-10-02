@@ -2,7 +2,7 @@ export const seedData = {
   credentials: {
     admin: {
       name: 'User Admin',
-      email: 'abduazizabumanonov6Gmail.com',
+      email: 'abduazizabdumanonov6gmail.com',
       code: '123456789',
       active: true,
       role: 'User Admin',
@@ -10,7 +10,7 @@ export const seedData = {
     },
     director: {
       name: 'Director',
-      email: 'abduazizabdumanonov7',
+      email: 'abduazizabdumanonov7@gmail.com',
       code: '987654321',
       active: true,
       role: 'Director',
